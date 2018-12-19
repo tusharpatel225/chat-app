@@ -3,11 +3,15 @@
 <head>
   <title>Chat Home</title>
   <meta charset="utf-8"/>
-  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src = "./index.js"></script>
 </head>
 <body>
   <h1>Welcome to the Chat App</h1>
-
+  <form method="post">
+    <input type="text" id="txtMsg" placeholder="enter message"/>
+    <input type="button" onclick="msgSend()" value="Send"/>
+    <ol id="msgList"></ol>
+  </form>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src = "./index.js"></script>
 </body>
 </html>
