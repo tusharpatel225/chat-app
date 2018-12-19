@@ -15,9 +15,10 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log("client disconnected");
   });
-  socket.on('createMessage', (msg) => {
+  socket.on('createMessage', (msg, callback) => {
     console.log('Message : ',msg);
     io.emit('newMessage', generateMessage(msg.from, msg.text));
+    callback("Created");
   });
 
 });
