@@ -18,4 +18,5 @@ function msgSend()
   socket.emit('createMessage', {from : "Tushar", text : msg}, (data) => {
     console.log("From server : ",data);
   });
+    return false;
 }
