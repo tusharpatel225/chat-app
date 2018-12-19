@@ -9,6 +9,7 @@
   <form method="post" onsubmit="return msgSend()">
     <input type="text" id="txtMsg" placeholder="enter message"/>
     <input type="submit"  value="Send"/>
+    <input type="button" onclick="sendLocation()"  value="Send Location"/>
     <ol id="msgList"></ol>
   </form>
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>

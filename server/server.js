@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
-const {generateMessage} = require('./utils/utils.js');
+const {generateMessage, generateLocation} = require('./utils/utils.js');
 const port = process.env.PORT || 2000;
 var app = express();
 var server = http.createServer(app);
@@ -19,6 +19,11 @@ io.on('connection', (socket) => {
     console.log('Message : ',msg);
     io.emit('newMessage', generateMessage(msg.from, msg.text));
     callback("Created");
+  });
+    socket.on('createLocation', (data, callback) => {
+    console.log('New Location : ', data);
+    io.emit('newLocation', generateLocation(data.from, data.lat, data.lon));
+    callback("Location created");
   });
 
 });
