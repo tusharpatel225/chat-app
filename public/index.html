@@ -4,23 +4,7 @@
   <title>Chat Home</title>
   <meta charset="utf-8"/>
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript">
-    var socket = io();
-    socket.on('connect', () => {
-      console.log("Connected to Server");
-    });
-    socket.on('disconnect', () => {
-      console.log("disconnected from Server");
-    });
-    socket.on('newMessage', (msg) => {
-        console.log("New Mail : ",msg);
-        socket.emit('createMessage', {
-          from : "Tusky",
-          text : "Hi"
-        });
-    });
-
-  </script>
+  <script type="text/javascript" src = "/index.js"></script>
 </head>
 <body>
   <h1>Welcome to the Chat App</h1>
