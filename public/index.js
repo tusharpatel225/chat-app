@@ -24,10 +24,11 @@ socket.on('newLocation', (msg) => {
 });
 function msgSend()
 {
-  var msg = document.getElementById('txtMsg').value;
-    if(msg.length==0)
+  var msg = document.getElementById('txtMsg');
+    if(msg.value.length==0)
         return false;
-  socket.emit('createMessage', {from : "Tushar", text : msg}, (data) => {
+    socket.emit('createMessage', {from : "Tushar", text : msg.value}, (data) => {
+      msg.value="";
     console.log("From server : ",data);
   });
     return false;
