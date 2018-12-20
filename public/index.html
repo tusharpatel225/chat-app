@@ -6,13 +6,21 @@
 </head>
 <body>
   <h1>Welcome to the Chat App</h1>
-  <form method="post" onsubmit="return msgSend()">
+    <div id="u">
+    <input type="text" id="userName" placeholder="enter screen name" autofocus autocomplete="false"/>
+    <input type="submit"  value="Submit" onclick = "setUser()"/>
+    </div>
+    <div id = "chat">
+  <form method="post" id="chatForm" onsubmit="return msgSend()">
     <input type="text" id="txtMsg" placeholder="enter message" autofocus autocomplete="false"/>
     <input type="submit"  value="Send"/>
     <input type="button" onclick="sendLocation()" id="btnLoc"  value="Send Location"/>
     <ol id="msgList"></ol>
   </form>
+        </div>
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src = "./index.js"></script>
+<script type="text/javascript" src = "./js/libs/moment.js"></script>
+<script type="text/javascript" src = "./js/index.js"></script>
+    
 </body>
 </html>
