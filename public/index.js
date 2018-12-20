@@ -32,9 +32,11 @@ function msgSend()
 }
 function sendLocation()
 {
+    var btn = document.getElementById("btnLoc");
     if(navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition((position) => {
+            btn.disabled = true;
            socket.emit('createLocation', {
                from : "Tushar",
                lat : position.coords.latitude,
@@ -42,6 +44,7 @@ function sendLocation()
            }
         , (data) => {
             console.log("From server : ",data); 
+            btn.disabled = false;
            });
         });
     }
