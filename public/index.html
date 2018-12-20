@@ -7,7 +7,7 @@
 <body>
   <h1>Welcome to the Chat App</h1>
   <form method="post" onsubmit="return msgSend()">
-    <input type="text" id="txtMsg" placeholder="enter message"/>
+    <input type="text" id="txtMsg" placeholder="enter message" autofocus autocomplete="false"/>
     <input type="submit"  value="Send"/>
     <input type="button" onclick="sendLocation()" id="btnLoc"  value="Send Location"/>
     <ol id="msgList"></ol>

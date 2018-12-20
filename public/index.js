@@ -25,6 +25,8 @@ socket.on('newLocation', (msg) => {
 function msgSend()
 {
   var msg = document.getElementById('txtMsg').value;
+    if(msg.length==0)
+        return false;
   socket.emit('createMessage', {from : "Tushar", text : msg}, (data) => {
     console.log("From server : ",data);
   });
@@ -46,11 +48,13 @@ function sendLocation()
             console.log("From server : ",data); 
             btn.disabled = false;
            });
+        }, () => {
+            return alert("Can not fetch location");    
         });
     }
     else
     {
-        return alert("Can not fetch location");
+        return alert("Geo location is not available");
     }
 
 }
