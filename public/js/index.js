@@ -3,7 +3,7 @@ var user = document.getElementById("u");
 user.style.visibility = "hidden";
 var socket = io();
 var ol = document.getElementById('msgList');
-if(sessionStorage.getItem("userName")=="")
+if(sessionStorage.getItem("userName")=== null)
 {
         user.style.visibility = "visible";
         c.style.visibility = "hidden";
