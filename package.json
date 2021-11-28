@@ -1,7 +1,7 @@
 {
   "name": "nodechatapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a test app",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
